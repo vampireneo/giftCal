@@ -229,7 +229,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       })
 
       function calGift() {
-        var value = 0;
+        var value = gift;
         if ($(".btn.active.noValue").length == 0) {
           $(".btn.active").each(function() {
             if ($(this).data("value"))
@@ -246,7 +246,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
               value += parseInt($(this).data("value"), 10);
           });
         }
-        $("#giftValue").text(gift+value);
+        if (value < 0) value = 0;
+        $("#giftValue").text(value);
       }
     </script>
   </body>
